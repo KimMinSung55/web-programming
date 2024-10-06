@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>라면을 끓이는 순서</title>
+        <script>
+            function apply(){
+                var ol=document.getElementById("step"); // // ID가 'step'인 ol 선택
+                var li=document.createElement("li"); // 새로운 li 생성
+                li.innerHTML=prompt("라면을 끓이는 순서를 입력하라"); // prompt 창으로 입력 텍스트를 li의 내용으로 설정
+                ol.appendChild(li); // 설정한 li를 ol의 자식으로 추가함
+            }
+        </script>
+    </head>
+
+    <body>
+        <h3>라면을 끓이는 순서</h3>
+        <hr>
+        <ol id="step" type="A" style="background-color: yellowgreen;" onclick="apply()">
+            <li>물을 끓인다.</li>
+        </ol>
+    </body>
+</html>

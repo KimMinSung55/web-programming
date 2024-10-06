@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>transform:rotate()</title>
+        <script>
+            var i=2; // 이미지의 가로 확대 비율 (초기값 = 2)
+            function change(obj){
+                obj.style.transform="scale("+i+",1)"; // 가로 크기를 i배로 확대, 세로 크기는 고정
+                if(i>=4){ // 배율이 4 이상이면 i값을 1로 초기화 후 1, 2, 3, 4의 배율로 반복
+                    i=1;
+                }
+                else{
+                    i+=1;
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <h2>클릭하면 2,3,4배로 옆으로 늘어납니다.</h2>
+        <hr>
+        <img src="./img/spongebob.PNG" alt="spongebob" width="200" onclick="change(this)">
+    </body>
+</html>
