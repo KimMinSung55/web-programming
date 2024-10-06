@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>객체생성</title>
+    <script>
+    
+    function register() {return this.nStudent += 1;} // register: 등록 학생 수를 1 증가시키는 함수
+    function unregister() {return this.nStudent -= 1;} // unregister: 등록 학생 수를 1 감소시키는 함수
+    function getStudentCount() {return this.nStudent;} // getStudentCount: 현재 등록된 학생 수를 반환하는 함수
+
+    // 1. 직접 객체 생성
+    let test = new Object(); // 새로운 빈 객체 생성
+    test.korName="웹프로그래밍"; // 객체의 korName 프로퍼티에 "웹프로그래밍" 할당
+    test.engName="Web Programming"; // 객체의 engName 프로퍼티에 "Web Programming" 할당
+    test.classCode="V024003" // 객체의 classCode 프로퍼티에 "V024003" 할당
+    test.nStudent=0; // 객체의 nStudent 프로퍼티에 0 할당 (학생 수)
+    
+    // 함수들을 객체의 메소드로 할당
+    test.register=register;
+    test.unregister=unregister;
+    test.getStudentCount=getStudentCount;
+
+    // 2. 리터럴 표기법으로 객체 생성
+    let test2={
+        korName: "클라우드컴퓨팅", // korName property에 "클라우드컴퓨팅" 할당
+        engName:"Cloud Computing", // engName property에 "Cloud Computing" 할당
+        nStudent: 0, // 학생 수 초기화
+
+        // 함수 정의
+        register: function() {return this.nStudent +=1;},
+        unregister: function() {return this.nStudent -=1;},
+        getStudentCount: function() {return this.nStudent;}
+    }
+    </script>
+
+    <script>
+        function test3(korName, engName, nStudent){ // 3. Prototype 방식을 이용한 객체 생성자 함수
+            // this 키워드를 사용하여 객체 프로퍼티 설정
+            this.korName=korName; // 교과목 이름
+            this.engName=engName; // 교과목 영문 이름
+            this.nStudent=nStudent; // 등록된 학생 수
+
+            // 객체 함수 정의
+            this.register = function() {return this.nStudent +=1;}
+            this.unregister = function() {return this.nStudent -=1;}
+            this.getStudentCount=function() {return this.nStudent;}
+        }
+    </script>
+</head>
+
+<body>
+    <h3>1. 직접 객체 만들기</h3> <!-- 직접 객체 만들기 출력 -->
+    <script>
+    // 직접 생성한 객체 'test'의 속성 및 메소드 호출
+    document.write("교과목 이름 = "+ test.korName+"<br>");
+    document.write("교과목 영문 이름 = "+ test.engName+"<br>");
+    document.write("등록 학생 수 = "+ test.getStudentCount()+"<br>"); // 현재 학생 수
+    document.write("after register, 등록 학생 수 = " + test.register()+"<br>"); // 학생 수 1 증가
+    </script>
+    <hr>
+
+    <h3>2. 리터럴 표기법</h3> <!-- 리터럴 표기법 출력 -->
+    <script>
+    // 리터럴 방식으로 생성된 객체 'test2'의 속성 및 메소드 호출
+    document.write("교과목 이름 = "+ test2.korName+"<br>");
+    document.write("교과목 영문 이름 = "+ test2.engName+"<br>");
+    document.write("등록 학생 수 = "+ test2.getStudentCount()+"<br>"); // 현재 학생 수
+    document.write("after register, 등록 학생 수 = " + test2.register()+"<br>"); // 학생 수 1 증가
+    </script>
+    <hr>
+
+    <h3>3. Prototype</h3> <!-- Prototype 출력 -->
+    <script>
+    // test3 생성자를 이용해 새로운 객체 'Test3' 생성
+    let Test3 = new test3("프로그래밍언어론","Programming Languages", 0);
+    document.write("교과목 이름 = "+ Test3.korName+"<br>");
+    document.write("교과목 영문 이름 = "+ Test3.engName+"<br>");
+    document.write("등록 학생 수 = "+ Test3.nStudent+"<br>") // 현재 학생 수
+    document.write("after register, 등록 학생 수 = "+ Test3.register()); // 학생 수 1 증가
+    </script>
+</body>
+
+</html>
