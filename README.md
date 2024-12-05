@@ -85,5 +85,6 @@
     - 라우터
 
 
-chapter1 ~ chapter11
-    - html, js practice
+* chapter1 ~ chapter11
+    - html practice
+    - js pratice
