@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>계산기</title>
+        <script>
+            var input= document.getElementsByTagName('input');
+            var text=document.getElementById('text');
+        
+            function textadd(obj){
+                var text=document.getElementById('text');
+                var str=text.value;
+                str+=obj.value;
+                text.value=str;
+            }
+            
+            function back(){
+                var text=document.getElementById('text');
+                var str=text.value;
+                str=str.substr(0,str.length-1);
+                text.value=str;
+            }
+
+            function del(){
+                var text=document.getElementById('text');
+                text.value=''
+            }
+            
+            function calc(){
+                var text=document.getElementById('text');
+                text.value=eval(text.value);
+            }
+
+        </script>
+    </head>
+    <body>
+        <h3>계산기 만들기</h3>
+        <hr>
+        <input type="text" id="text" value="">
+        <br>
+        <br>
+        <input type="button" id='back' value="back" onclick="back()">
+        <input type="button" id='ce' value="ce" onclick="del()">
+        <input type="button" id='c' value="c" onclick="del()">
+        <input type="button" id='=' value="=" onclick="calc()">
+        <br>
+        <input type="button" id='7' value="7" onclick="textadd(this)">
+        <input type="button" id='8' value="8" onclick="textadd(this)">
+        <input type="button" id='9' value="9" onclick="textadd(this)">
+        <input type="button" id='/' value="/" onclick="textadd(this)">
+        <br>
+        <input type="button" id='4' value="4" onclick="textadd(this)">
+        <input type="button" id='5' value="5" onclick="textadd(this)">
+        <input type="button" id='6' value="6" onclick="textadd(this)">
+        <input type="button" id='*' value="*" onclick="textadd(this)">
+        <br>
+        <input type="button" id='1' value="1" onclick="textadd(this)">
+        <input type="button" id='2' value="2" onclick="textadd(this)">
+        <input type="button" id='3' value="3" onclick="textadd(this)">
+        <input type="button" id='-' value="-" onclick="textadd(this)">
+        <br>
+        <input type="button" id='0' value="0" onclick="textadd(this)">
+        <input type="button" id='+' value="+" onclick="textadd(this)">
+        <input type="button" id='no1' value="NONE">
+        <input type="button" id='no2' value="NONE">
+        
+        
+        <br>
+        <br>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>산수 문제를 풀어 봅시다</title>
+    </head>
+    <body onload="reroll(); timelimit()">
+        <h3>산수 문제를 풀어봅시다</h3>
+        수식을 계산하여 답을 입력하고 채점버튼을 누르세요
+        <br><br>
+        <span id='remain_time'>남은 시간: </span>
+        <hr>
+        <span id='q1'></span>  <input type="text" id="a1"><br>
+        <span id='q2'></span>  <input type="text" id="a2"><br>
+        <span id='q3'></span>  <input type="text" id="a3"><br>
+        <span id='q4'></span>  <input type="text" id="a4"><br>
+        <button id='check' onclick="check()">채점</button>
+        <span id='span'></span>
+        <button id='check' onclick="reroll()">다시</button>
+
+        <script>           
+            var time=10;
+            function check(){
+                var collect=0;
+                for(var i=1; i<5; i++){  
+                    var q=document.getElementById('q'+i);
+                    var a=document.getElementById('a'+i);
+                    if(Math.floor(eval(q.innerHTML))==a.value){
+                        collect++;
+                    }
+                    else{
+                        q.style.textDecoration="line-through"
+                    }
+                document.getElementById('span').innerHTML=collect;
+                }
+            }
+
+            function spanchange(){
+                var remain_time = document.getElementById('remain_time');
+                remain_time.innerHTML='남은시간: '+time--;
+                if(time<0){
+                    time=0;
+                }
+            }
+
+            function timelimit(){
+                setInterval("spanchange()",1000);
+                setTimeout("check()",11000)
+
+            }
+
+            function reroll(){
+                for(var i=1; i<5; i++){  
+                    var q=document.getElementById('q'+i);
+                    var a=document.getElementById('a'+i);
+
+                    switch (Math.floor(Math.random()*100)%4) {
+                        case 0:
+                            q.innerHTML=Math.floor(Math.random()*100%30)+"+"+Math.floor(Math.random()*100%30);
+                            break;
+                        case 1:
+                            q.innerHTML=Math.floor(Math.random()*100%30)+"-"+Math.floor(Math.random()*100%30);
+                            break;
+                        case 2:
+                            q.innerHTML=Math.floor(Math.random()*100%30)+"/"+Math.floor(Math.random()*100%30);
+                            break;
+                        case 3:
+                            q.innerHTML=Math.floor(Math.random()*100%30)+"*"+Math.floor(Math.random()*100%30);
+                            break;    
+                        default:
+                            q.innerHTML=Math.floor(Math.random()*100%30)+"*"+Math.floor(Math.random()*100%30);
+                            break;
+                    }
+
+                    q.style.textDecoration="none";
+                    a.value='';
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>

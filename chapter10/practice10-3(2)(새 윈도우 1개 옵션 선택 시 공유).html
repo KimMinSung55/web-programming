@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>옵션 선택으로 사이트 접속</title>
+    </head>
+    <body>
+        <h3>옵션 선택으로 사이트 접속</h3>
+        옵션 선택마다 새 윈도우에 접속합니다
+        <hr>
+        접속할 사이트<br>
+        <select id="site" onchange="ch()">
+            <option value="https://www.naver.com">네이버</option>
+            <option value="https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwiBtdb95p7mAhX6xIsBHbbAC7MQPAgH">구글</option>
+            <option value="https://www.oracle.com/kr/index.html">오라클</option>
+        </select>
+        <script>
+            var i=0;
+            function ch(){
+                var sel = document.getElementById('site');
+                window.open(sel[sel.selectedIndex].value,"myWin","width=100, height=100");
+                i++;
+            }
+        </script>
+    </body>
+</html>

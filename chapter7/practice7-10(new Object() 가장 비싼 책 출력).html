@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>book 객체 배열 만들기</title>
+    </head>
+    <script>
+        var book=new Object();
+        book.name="HTML5";
+        book.author="황기태";
+        book.price=20000;
+    </script>
+    <body>
+        <h3>book 객체 배열 만들기</h3>
+        <hr>
+        <script>
+            var bookArraya=[];
+                            
+            for(i=0; i<5; i++){
+                var book=new Object();
+                var a=prompt("콤마(,)로 분리하면서 책제목 저자 가격순으로 입력");
+                aa=a.split(",");
+                book.name=aa[0];
+                book.author=aa[1];
+                book.price=aa[2];
+                bookArraya[i]=book;
+            }
+            for(i=0; i<5; i++){
+                                
+                document.write("book: "+bookArraya[i].name);
+                document.write(", "+bookArraya[i].author);
+                document.write(", "+bookArraya[i].price);
+                document.write("<br>");
+            }
+            var k=0;
+            for(i=0; i<5; i++){
+                if(bookArraya[k].price<bookArraya[i].price){
+                    k=i;
+                }
+            }
+            document.write("<hr>제일 비싼 책은"+bookArraya[k].name);
+        </script>
+    </body>
+</html>

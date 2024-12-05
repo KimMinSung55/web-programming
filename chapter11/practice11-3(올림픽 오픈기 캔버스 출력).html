@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>오륜기</title>
+    </head>
+    <body>
+        <h3>오륜기 그리기</h3>
+        <hr>
+        <canvas
+        id="myCanvas" style="background-color: aliceblue;"
+        width="500" height="500"
+        ></canvas>
+        <script>
+            var canvas=document.getElementById('myCanvas');
+            var context=canvas.getContext('2d');
+
+            function draw(x,y,color){
+                context.beginPath();
+                context.strokeStyle=color;
+                context.lineWidth='3'
+                context.arc(x,y,30,0,2*Math.PI,true);
+                context.stroke();
+            }
+            
+            draw(50,50,'blue');
+            draw(120,50,'black');
+            draw(190,50,'red');
+            draw(85,80,'yellow');
+            draw(155,80,'green');
+        
+        
+        
+        </script>
+    </body>
+</html>

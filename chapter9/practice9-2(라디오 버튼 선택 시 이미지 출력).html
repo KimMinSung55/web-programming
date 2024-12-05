@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>라디오버튼과 이미지 출력</title>
+        <script>
+            function ch(obj){
+                var img=document.getElementById('img');
+                img.src=obj.value;
+            }
+        
+        </script>
+    </head>
+    <body>
+        <h3>라디오버튼을 클릭하면 이미지를 출력합니다</h3>
+        <hr>
+        <input type="radio" name='fruit' value='banana.png' onclick="ch(this)">바나나
+        <input type="radio" name='fruit' value='mango.png' onclick="ch(this)">망고
+        <input type="radio" name='fruit' value='apple.png' onclick="ch(this)">사과<br><br>
+        <img id='img'>
+    </body>
+</html>

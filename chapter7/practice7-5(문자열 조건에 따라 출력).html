@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문자열 배열 다루기</title>
+    </head>
+    <body>
+        <h3>문자열 배열 다루기</h3>
+        <hr>
+        <script>
+            var names = ["wonsun","jaemoonlee","kitae","gracehwang"];
+            document.write("이름: ");
+            for(var i=0; i<names.length; i++){
+                document.write(names[i]+" ");
+            }
+            document.write("<br>");
+
+            document.write("가장 긴 이름: ");
+            var ii=0;
+            for(var i=0; i<names.length; i++){
+                if(names[ii].length <= names[i].length){
+                    ii=i;
+                }
+            }
+            document.write(names[ii]);
+            document.write("<br>");
+            
+            document.write("가장 먼저 나오는 이름: ");
+            names.sort();
+            document.write(names[0]);
+
+            
+            document.write("<br>");
+            
+            document.write("증가 순 이름: ");
+            for(var i=0; i<names.length; i++){
+                document.write(names[i]+" ");
+            }
+
+
+            
+        </script>
+    </body>
+</html>

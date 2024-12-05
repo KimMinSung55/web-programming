@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>폼으로 사각형 그리기</title>
+
+    </head>
+    <body>
+        <h3>폼으로 사각형 그리기</h3>
+        <hr>
+        x <input type="text" id="x">
+        y <input type="text" id="y">
+        <br>
+        width <input type="text" id="width">
+        height <input type="text" id="height">
+        <br>
+        선굵기 <input type="text" id="line">
+        선색 <input type='color'id='color'>
+        <br>
+        <button onclick="draw()">그리기</button>
+        <button onclick="context.clearRect(0, 0, canvas.width, canvas.height);">지우기</button>
+        <br>
+        <canvas
+        id="myCanvas" style="background-color: aliceblue;"
+        width='500' height="500"
+        ></canvas>
+        <script>
+            var canvas=document.getElementById('myCanvas');
+            var context=canvas.getContext('2d');
+
+            function draw(){
+                var x=document.getElementById('x').value;
+                var y=document.getElementById('y').value;
+
+                var width=document.getElementById('width').value;
+                var height=document.getElementById('height').value;
+
+                var line=document.getElementById('line').value;
+                var color=document.getElementById('color').value;
+
+                context.beginPath();
+                context.lineWidth=line;
+                context.strokeStyle=color;
+                context.rect(x,y,width,height);
+                context.stroke();
+                
+            }
+        
+        
+        </script>
+    </body>
+</html>

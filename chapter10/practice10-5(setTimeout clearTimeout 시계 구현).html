@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>시계</title>
+    </head>
+    <body onload='timeclock()'>
+        <h3>div에 시계만들기</h3>
+        <hr>
+        <div id='div'>
+
+        </div>
+        <script>
+            
+            function timeclock(){
+                timeID = setTimeout("findtime()",0);
+            }
+            
+            function findtime(){
+                var now = new Date();
+                var div = document.getElementById('div');
+                div.innerHTML = now;
+                var timeID = setTimeout("findtime()",0);
+            }
+        
+        
+        
+        </script>
+    </body>
+</html>

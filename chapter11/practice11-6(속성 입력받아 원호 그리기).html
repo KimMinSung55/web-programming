@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>폼으로 사각형 그리기</title>
+
+    </head>
+    <body>
+        <h3>폼으로 사각형 그리기</h3>
+        <hr>
+        x <input type="text" id="x">
+        y <input type="text" id="y">
+
+        <br>
+        반지름 <input type="text" id="r">
+        방향 
+        <select id="sel">
+            <option value="true">반시계방향</option>
+            <option value="false">시계방향</option>
+        </select>
+        <br>
+
+        시작각도 <input type="text" id="start">
+        끝각도 <input type='text'id='end'>
+        <br>
+
+        선굵기 <input type='text' id='line'>
+        선색 <input type='color' id='color'>
+        <br>
+
+        <button onclick="draw()">그리기</button>
+        <button onclick="context.clearRect(0, 0, canvas.width, canvas.height);">지우기</button>
+        <br>
+
+        <canvas
+        id="myCanvas" style="background-color: aliceblue;"
+        width='500' height="500"
+        ></canvas>
+        <script>
+            var canvas=document.getElementById('myCanvas');
+            var context=canvas.getContext('2d');
+
+            function draw(){
+                var x=document.getElementById('x').value;
+                var y=document.getElementById('y').value;
+
+                var r=document.getElementById('r').value;
+                var sel= document.getElementById('sel');
+                if(sel.options[sel.selectedIndex].value=='true'){
+                    var dir=true;
+                }
+                else{
+                    var dir=false;
+                }
+
+                var start=((document.getElementById('start').value)/180)*Math.PI;
+                var end=((document.getElementById('end').value)/180)*Math.PI;
+
+                var line=document.getElementById('line').value;
+                var color=document.getElementById('color').value;
+
+                context.beginPath();
+                context.lineWidth=line;
+                context.strokeStyle=color;
+                context.arc(x,y,r,start,end,dir);
+                context.stroke();
+                
+            }
+        
+        
+        </script>
+    </body>
+</html>

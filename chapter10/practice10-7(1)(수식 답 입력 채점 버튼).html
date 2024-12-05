@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>산수 문제를 풀어 봅시다</title>
+    </head>
+    <body>
+        <h3>산수 문제를 풀어봅시다</h3>
+        수식을 계산하여 답을 입력하고 채점버튼을 누르세요
+        <hr>
+        <span id='q1'>5*6</span>  <input type="text" id="a1"><br>
+        <span id='q2'>7+5*3</span>  <input type="text" id="a2"><br>
+        <span id='q3'>23*2</span>  <input type="text" id="a3"><br>
+        <span id='q4'>35-7</span>  <input type="text" id="a4"><br>
+        <button id='check' onclick="check()">채점</button>
+        <span id='span'></span>
+
+        <script>
+            var collect=0;
+
+            function check(){
+                var collect=0;
+                for(var i=1; i<5; i++){
+                    var q=document.getElementById('q'+i);
+                    var a=document.getElementById('a'+i);
+                    if(eval(q.innerHTML)==a.value){
+                        q.style.textDecoration="none"
+                        collect++;
+                    }
+                    else{
+                        q.style.textDecoration="line-through"
+                    }
+                document.getElementById('span').innerHTML=collect;
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>

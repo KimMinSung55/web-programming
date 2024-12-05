@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>배경 바꾸기</title>
+        <script>
+        window.ondblclick = function () {
+            document.body.style.backgroundColor='rgb('+Math.floor(Math.random()*1000%256)+
+            ','+Math.floor(Math.random()*1000%256)+
+            ','+Math.floor(Math.random()*1000%256)+')';
+        }
+        </script>
+    </head>
+    <body ondblclick="ch(this)">
+        <h3>바탕 아무 곳에나 더블클릭</h3>
+        <hr>
+        바탕 아무 곳이나 <strong>더블클릭</strong>하면 배경색이 랜덤하게
+        변합니다
+        
+    </body>
+</html>

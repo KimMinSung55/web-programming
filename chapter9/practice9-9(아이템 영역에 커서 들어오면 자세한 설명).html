@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이벤트 객체의 target</title>
+        <style>
+            div{
+                position: absolute;
+                visibility: hidden;
+                background-color: skyblue;
+                border: olive;
+            }
+        
+        </style>
+        <script>
+            var list=['자전거','책','아이언맨','웹프'];
+            
+            function show(obj,e){
+                var div= document.getElementById('div');
+                div.innerHTML=list[parseInt(obj.id)];
+                div.style.visibility='visible';
+                div.style.top=e.clientY+'px';
+                div.style.left=e.clientX+'px';
+            }
+
+            function hide(obj){
+                var div= document.getElementById('div');
+                div.style.visibility='hidden';
+            }
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <h3>아이템을 클릭하면 1.3배로</h3>
+        <hr>
+        <p>여름 방학 때 꼭 하고 싶은 것</p>
+        <ul>
+            <li onmouseover="show(this,event)" onmouseout='hide(this)' id='0'>자전거로 대한민국 일주</li>
+            <li onmouseover="show(this,event)" onmouseout='hide(this)' id='1'>책 100권 읽기</li>
+            <li onmouseover="show(this,event)" onmouseout='hide(this)' id='2'>철인 3종 경기 준비</li>
+            <li onmouseover="show(this,event)" onmouseout='hide(this)' id='3'>자바스크립트 정복</li>
+        </ul>
+        <div id='div'></div>
+    </body>
+</html>

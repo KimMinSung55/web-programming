@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>16개의 CSS2 색이름과 색</title>
+        <style>
+            div{
+                display: inline-block;
+                width: 150px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>16개의 CSS2 색이름과 색</h3>
+        <hr>
+        <script>
+            for(var i=0; i<18; i++){
+                
+                var r=Math.floor((Math.random()*1000)%256)
+                var g=Math.floor((Math.random()*1000)%256)
+                var b=Math.floor((Math.random()*1000)%256)
+                document.write("<div style='background-color:rgb("
+                +r+","
+                +g+","
+                +b
+                +")'>rgb("+
+                r+","
+                +g+","
+                +b+")</div>")
+            }
+        </script>
+    </body>
+</html>

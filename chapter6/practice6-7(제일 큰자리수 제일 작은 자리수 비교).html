@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>큰 자리수와 낮은 자리수</title>
+    </head>
+    <body>
+        <h3>큰 자리수와 낮은 자리수 같은 지 비교</h3>
+        <hr>
+        <script>
+            var a=prompt("숫자입력");
+            a=parseInt(a);
+            var n1=a%10;
+            var n2=Math.floor(a/10);
+
+            while(n2>10){
+                n2=Math.floor(n2/10);
+            }
+            if(n1==n2){
+                document.write(a+": 같음");
+            }
+            else{
+                document.write(a+": 다름");
+            }
+        </script>
+    </body>
+</html>

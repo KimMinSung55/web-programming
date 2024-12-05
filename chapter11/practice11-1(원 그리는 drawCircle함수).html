@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>drawcircle()만들기</title>
+    </head>
+    <script>
+        function drawcircle(ctx,x,y,radius){
+            ctx.beginPath();
+            ctx.arc(x,y,radius,0,2*Math.PI,false);
+            ctx.stroke();
+        }
+    
+    </script>
+    <body>
+        <h3>drawCircle()만들기</h3>
+        <hr>
+        <canvas
+        id='myCanvas' width='300' height="220"
+        style="background-color: aliceblue;"
+        ></canvas>
+        <script>
+            var canvas=document.getElementById('myCanvas');
+            var context=canvas.getContext('2d');
+
+            drawcircle(context,100,100,80);
+            drawcircle(context,150,150,30);   
+        
+        </script>
+
+    </body>
+</html>

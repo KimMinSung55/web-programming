@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 9-3</title>
+    <script>
+        function calc(e){
+            var exp=document.getElementById('exp');
+            var res=document.getElementById('res');
+            if(e.keyCode==13){
+                res.value=eval(exp.value);
+            }
+        }
+        // function doCalc(e){
+        //     if (e.key == "Enter") { // Enter 대신 다른 키도 가능
+        //         let exp = document.getElementById('exp');
+        //         let res = document.getElementById('res');
+        //         res.value = eval(exp.value);
+        //     }
+        // }
+    </script>
+</head>
+<body>
+    <h2>계산기 만들기</h2>
+    <hr>
+    <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
+    식 <input type="text" id='exp' onkeydown="calc(event)">
+    <br>
+    값 <input type='text' id='res'>
+</body>
+</html>
