@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>키 이벤트</title>
+        <script>
+            function whatketdown(e){
+                var str='';
+                var div = document.getElementById('div');
+                div.innerHTML = '';
+                
+                if(e.altKey){
+                    if(e.altLeft) str +='왼쪽 ALT키가 눌려졌습니다.';
+                    else str +='오른쪽 ALT가 눌려졌습니다.';
+                    str +='<br>';
+                }
+
+                if(e.shiftKey){
+                    if(e.shiftLeft) str +='왼쪽 SHIFT키가 눌려졌습니다.';
+                    else str +='오른쪽 SHIFT가 눌려졌습니다.';
+                    str +='<br>';
+                }
+
+                if(e.ctrlKey){
+                    if(e.ctrlLeft) str +='왼쪽 CTRL키가 눌려졌습니다.';
+                    else str +='오른쪽  CTRL가 눌려졌습니다.';
+                    str +='<br>';
+                }
+                str +=String.fromCharCode(e.keyCode)+'키가 눌려졌습니다';
+                div.innerHTML=str;
+            }
+            
+        
+        
+        
+        </script>
+
+    </head>
+    <body>
+        <h3>키 리스너와 키 이벤트 객체의 프로퍼티</h3>
+        <hr>
+        텍스트 창에 키를 눌러 보세요. ALT. SHIFT, CTRL
+        키도 가능합니다<br>
+        <input type="text" id='text' onkeydown="whatketdown(event)">
+        <div id='div' style='background-color: skyblue; width: 250px; height: 50px;'>
+        </div>
+    </body>
+</html>
