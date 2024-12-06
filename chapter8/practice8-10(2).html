@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM 객체 동적 삽입</title>
+    </head>
+    <script>
+        function addAnswer(obj,ans){
+            var parent=obj.parentElement;
+            var answer=document.createElement("p");
+            answer.innerHTML=ans;
+            answer.addEventListener("click",
+                function (){
+                    var div=this.parentElement;
+                    div.removeChild(this);
+                }
+            )
+            parent.appendChild(answer);
+        }
+    </script>
+    <body>
+        <h3>정답의 동적 삽입</h3>
+        <hr>
+        <div>
+            <p>
+                Q. 거울아 거울아 누가 제일 이쁘니??
+            </p>
+            <button onclick="addAnswer(this,'백설공주')">답보기</button>
+        </div>
+        <div>
+            <p>
+                Q.죽느냐 사느냐 어느 것이 문제인가?
+            </p>
+            <button onclick="addAnswer(this,'둘 다')">답보기</button>
+        </div>
+    </body>
+</html>

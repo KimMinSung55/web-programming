@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>클릭해봐ㅋ</title>
+        <script>
+            var i=2;
+            function upup(obj){
+                obj.style.transform="scale("+i+",1)";
+                if(i>=4){
+                    i=1;
+                }
+                else{
+                    i+=1;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>클릭하명 2,3,4배로 옆으로 늘어납니다</h3>
+        <hr>
+        <img src="puppy.png" alt="개" width="100" height="100" onclick="upup(this)">
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>z-index 프로퍼티</title>
+    </head>
+    <script>
+        var i=-1;
+        var img=document.getElementsByTagName("img");
+        for(var j=0; j<img.length; j++){
+            img[i].style.zIndex=j;
+        }
+
+        function change(obj){
+            obj.style.zIndex=i;
+            i=i-1;
+        }
+        
+    </script>
+    <style>
+        div { position: absolute; }
+        img { position: absolute; }
+    </style>
+    <body>
+        <h3>z-index 프로퍼티</h3>
+        <hr>
+        <div>
+            <img src="spade-A.png" alt="a" width="100" height="140" onclick="change(this)">
+            <img src="spade-2.png" alt="a" width="100" height="140" onclick="change(this)">
+            <img src="spade-3.png" alt="a" width="100" height="140" onclick="change(this)">
+            <img src="spade-7.png" alt="a" width="100" height="140" onclick="change(this)">
+        </div>
+    </body>
+</html>

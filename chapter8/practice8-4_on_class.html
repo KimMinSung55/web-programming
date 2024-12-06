@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8-10</title>
+        <meta charset="utf-8">
+        <script>
+            
+            function calc() {
+                n=document.getElementById("i");
+                n=parseInt(n.value)-1;
+                
+
+                var q=document.getElementsByClassName("q");
+                var a=document.getElementsByClassName("a");
+                if(q.length<=n){
+                    alert("no question!!!");
+                }
+                a[n].innerHTML=(eval(q[n].innerHTML));                
+            }
+        </script>
+        <style>
+            p{
+                display: inline;
+            }
+            span.a{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+    <ol>
+    <li>    <span class="q">2+3</span>
+        = <span class="a">답</span><br>
+    <li>    <span class="q">3*5</span>
+        = <span class="a">답</span><br>
+    <li>    <span class="q">3*(4+5)</span>
+        = <span class="a">답</span><br>
+    <li>    <span class="q">123-435+331/23</span>
+            = <span class="a">답</span><br><br>
+    </ol>
+        <input type="text" id="i">
+        <input type="button" value="계산" onclick="calc()">
+        
+    </body>
+</html>
