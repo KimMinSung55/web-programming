@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>type practice</title>
+    </head>
+    <script>
+        function classs(korName,engName,classCode,nStudents){
+            this.korName=korName;
+            this.engName=engName;
+            this.classCode=classCode;
+            this.nStudents=nStudents;
+
+            this.register=function () {this.nStudents+=1;}
+            this.unregister= function () { this.nStudents-=1;}
+            this.getStudentCount= function () {return this.nStudents;}
+        }
+    </script>
+    <body>
+        1.
+            <p>
+                function register(){
+                    this.nStudents+=1;
+                }
+            </p>
+            <p>
+                function unregister(){
+                    this.nStudents-=1;
+                }
+            </p>
+            <p>
+                function getStudentCount(){
+                    return this.nStudent();
+                }
+            </p>
+            <p>
+                var classs=new Object();<br>
+                classs.korName="웹프로그래밍 기초";<br>
+                classs.engName="Web Programming Basic";<br>
+                classs.classCode="CTE0002";<br>
+                classs.nStudents=0;<br>
+                classs.register=register;<br>
+                classs.unregister=unregister;<br>
+                classs.getStudentCount=getStudentCount;<br>
+            </p>
+
+        2.
+            <p>
+                function register(){
+                    this.nStudents+=1;
+                }
+            </p>
+            <p>
+                function unregister(){
+                    this.nStudents-=1;
+                }
+            </p>
+            <p>
+                function getStudentCount(){
+                    return this.nStudent();
+                }
+            </p>
+            <p>
+                var classs={<br>
+                korName:"웹프로그래밍 기초",<br>
+                engName:"Web Programming Basic",<br>
+                classCode:"CTE0002",<br>
+                nStudents:0,<br>
+                register: register,<br>
+                unregister: unregister,<br>
+                getStudentCount: getStudentCount
+                <br>
+                };<br>
+            </p>
+
+        3.
+            <p>
+                function classs(korName,engName,classCode,nStudents){<br>
+                    this.korName=korName;<br>
+                    this.engName=engName;<br>
+                    this.classCode=classCode;<br>
+                    this.nStudents=nStudents;<br>
+            <br>
+                    this.register=function () {this.nStudents+=1;} <br>
+                    this.unregister= function () { this.nStudents-=1;} <br>
+                    this.getStudentCount= function () {return this.nStudents;} <br>
+                    }
+            </p>
+    </body>
+</html>

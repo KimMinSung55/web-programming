@@ -1,0 +1,18 @@
+table{
+    border: 1px solid blue;
+    text-align: center;
+}
+th, td {
+    border: 1px solid green;
+}
+thead th, tfoot th{
+    width: 100px;
+    height: 40px;
+    background-color: mistyrose;
+}
+thead th{
+    color: red;
+}
+.num{
+    color: blue;
+}
