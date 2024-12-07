@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>별문자 입력하기</title>
+    </head>
+    <body>
+        <h3>별 문자 입력하기</h3>
+        <hr>
+        <script>
+            var star=prompt("정수를 입력하시오");
+            star=parseInt(star);
+
+            if(isNaN(star)==true){
+                document.write("입력 오류입니다.");
+                }
+            else{
+                for(var i=0; i<star; i++){
+                    for(var j=0; j<=i; j++){
+                        document.write("*");
+                    }
+                    document.write("<br>");
+                }
+            }
+        </script>
+    </body>
+</html>
