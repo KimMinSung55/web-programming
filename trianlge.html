@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>trianlge</title>
+    </head>
+    <body>
+        <canvas
+        id='can' width="500" height="500"
+        style="background-color: aliceblue;"
+        ></canvas><br>
+        <button onclick="con.clearRect(0, 0, can.width, can.height);">clear</button>
+       
+        <script>
+            var can=document.getElementById('can');
+            var con=can.getContext('2d');
+
+            con.strokeStyle='red';
+            con.lineWidth='10';
+            con.font='15px Gothic';
+        
+            con.beginPath();
+            con.moveTo(100,250);
+            con.fillText("(100,250)",100,250);
+            con.lineTo(100,50);
+            con.fillText("(100,50)",100,50);
+            con.lineTo(300,250);
+            con.fillText("(300,250)",300,250);
+            con.lineTo(100,250);
+            con.stroke();
+        </script>
+    </body>
+</html>

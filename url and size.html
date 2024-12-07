@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>site url and size</title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>사이트 주소와 창의 크기</legend>
+                <label>
+                    URL:
+                    <input type="text" id="url" size='50'>
+                </label><br>
+                <label>
+                    Width:
+                    <input type="text" id="width">
+                </label><br>
+                <label>
+                    Height:
+                    <input type="text" id="height">
+                </label>
+            </fieldset>
+            <button onclick="openwin()">open</button>
+            <button onclick="closewin()">close</button>
+        </form>
+    <script>
+        var newWin;
+        function openwin(){
+            var url=document.getElementById('url').value;
+            var width=document.getElementById('width').value;
+            var height=document.getElementById('height').value;
+
+            newWin=window.open(url,'myWin','width='+width+', height='+height);
+        }
+        function closewin(){
+                    newWin.close();
+            }
+    </script>
+    </body>
+</html>

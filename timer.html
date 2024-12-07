@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>timer</title>
+    </head>
+    <body>
+        <div>초기시간: <span id='limit'>5</span></div>
+        <button id='start' onclick="start()">Start</button>
+        <button id='reset' onclick="reset()">Reset</button>
+        
+        <script>
+            var limit=document.getElementById('limit');
+            var time=5;
+            var timeID=null;
+            function start(){
+                setInterval(timeout,1000);
+            }
+            function timeout(){
+                time-=1;
+                if(time>=0){
+                    limit.innerHTML=time;
+                }
+                else{
+                    clearInterval(timeID);
+                }
+                if(time==0){
+                    alert('종료합니다.')
+                }
+            }
+            function reset(){
+                clearInterval(timeID);
+                time=5;
+                limit.innerHTML=time;
+            }
+        </script>
+    </body>
+</html>
